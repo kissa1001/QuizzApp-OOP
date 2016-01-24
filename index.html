@@ -3,23 +3,72 @@
 <head>
 	<meta charset="UTF-8">
 	<title>QuizzApp</title>
+	<!--Styling-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/shortcut-icon.png"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Righteous|Philosopher|Playball' rel='stylesheet' type='text/css'>
+	<!--Bootstrap-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<!--Javascript & jQuery-->
 	<script src="js/jquery-2.1.4.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="js/typed.js"></script>
 	<script src="js/underscore.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body>
-	
-	<script id="question-template" type="text/x-handlebars-template">
-		<div class="question">
-			{{question}}
-		<ul class="choices">
-			{{#each choices}}
- 				<li>{{this}}</li>
-  			{{/each}}
-		</ul>
+	<section id="intro0">
+		<div class="container">
+			<p class="intro0-text"></p>
+			<button class="btn btn-danger btn-lg start">Click to start <i class="fa fa-thumbs-up"></i></button>
 		</div>
-	</script>
-	
+	</section>
+	<section id="intro">
+		<div class="container">
+			<h1 class="chooseCharacter">Please choose your character</h1>
+			<script id="characters-template" type="text/x-handlebars-template">
+				<ul class="characterChoose">	
+					<li>{{Mugsy['intro']}}</li>
+					<li>{{Mango.['intro']}}</li>
+				</ul>
+			</script>
+		</div>
+	</section>
+	<section id="game">
+		<script id="question-template" type="text/x-handlebars-template">
+			<div class="question">
+				{{question}}
+				<ul class="choices">
+					{{#each choices}}
+ 						<li>{{this}}</li>
+  					{{/each}}
+				</ul>
+			</div>
+		</script>
+	</section>
+	<section id="gameOver">
+		
+	</section>
+	<div class="characters">
+		<div id="mugsy">
+			<img class="intro" id="mugsy" src="img/mugsy-intro.png" alt="mugsy-intro"/>
+			<img class="stand" src="img/mugsy-ready.png" alt="mugsy-ready">
+		    <img class="correct" src="img/mugsy-correctAnswer.png" alt="mugsy-correctAnswer">
+		    <img class="wrong" src="img/mugsy-incorrectAnswer.png" width="200" height="200" alt="mugsy-incorrectAnswer">
+			<img class="win" src="img/mugsy-win.png" alt="mugsy-win">
+			<img class="fail" src="img/mugsy-fail.png" alt="mugsy-fail">
+		</div>
+		<div id="mango">
+			<img class="intro" id="mango" src="img/mango-intro.png" alt="mango-intro" width="200" height="200"/>
+			<img class="stand" src="img/mango-ready.png" width="200" height="200" alt="mango-ready">
+			<img class="correct" src="img/mango-correctAnswer.png" width="200" height="200" alt="mango-correctAnswer">
+		    <img class="wrong" src="img/mango-incorrectAnswer.png" width="200" height="200" alt="mango-incorrectAnswer">
+		    <img class="win" src="img/mango-win.png" width="200" height="200" alt="mango-win">
+			<img class="fail" src="img/mango-fail.png" width="200" height="200" alt="mango-fail">
+		</div>
+	</div>
 </body>
 </html>

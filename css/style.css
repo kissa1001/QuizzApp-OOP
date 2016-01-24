@@ -1,0 +1,44 @@
+body{
+	margin:0 0;
+	padding:0 0;
+	font-family: 'Philosopher', sans-serif;
+}
+/*Intro */
+#intro0{
+	display:none; 
+	background: url('../img/intro0-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:100vh;
+	margin:0 0;
+	text-align:center;
+	padding-top:2em;
+}
+.intro0-text{
+	font-family: 'Philosopher', sans-serif;
+	color:#fff;
+	font-size:1.5em;
+	margin-bottom: 2em;
+}
+#intro{
+	display:none;
+	background: url('../img/intro-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:100vh;
+	margin:0 0;
+	text-align:center;
+	padding-top:2em;
+}
+.chooseCharacter{
+	font-size: 4em;
+	margin-top:0;
+	font-family: 'Philosopher', sans-serif;
+	color:#fff;
+}
+#game{
+	display:none;
+}
+.characters{
+	display:none;
+}
