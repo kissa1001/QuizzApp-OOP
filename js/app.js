@@ -5,10 +5,7 @@ $(".intro0-text").typed({
     strings: [" ", "With more than 1 billion members and counting, Facebook is one of the fastest-growing phenomena to come out of a college dorm room. From Web-based applications to pokes, from photo uploads to fan pages, there's something about this social networking service that sucks people in and won't let them go. What do you know about Facebook?"],
     typeSpeed: 10
 });
-
-
-
-
+//Quizz
 var Quizz = function(questions){
 	this.questions = questions;
 	this.currentQuestionIndex = 0;
@@ -123,6 +120,12 @@ var Mango = new Character ({
 	win: $('#mango.win')
 });
 
+Character.prototype.choose = function(){
+    var template = Handlebars.compile($('#characters-template').html());
+		$('#intro.container').append(template({Mugsy: Mugsy.intro}));
+};
+
+
 Quizz.prototype.start = function(){
  	//intro0 section appear
 	$('#intro0').fadeIn(500);
@@ -130,8 +133,7 @@ Quizz.prototype.start = function(){
 	$('.btn-danger').on('click',function(){
 	$('#intro0').hide();
 	$('#intro').fadeIn(1000);
-	var template = Handlebars.compile($('#characters-template').html());
-		$('#intro.container').append(template);
+	Character.choose();
 	});
 	//show the game
 	$('.intro').on('click',function(){
@@ -150,7 +152,6 @@ Quizz.prototype.start = function(){
 	this.currentQuestion().show();
 	});
 }; 
-
 	quizz.start();
 });
 
