@@ -38,6 +38,15 @@ body{
 }
 #game{
 	display:none;
+	background: url('../img/game-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#gameOver{
+	display:none;
+	background: url('../img/gameOver-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .characters{
 	display:none;
